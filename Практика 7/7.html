@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загадки и математика</title>
+</head>
+<body>
+    <script>
+        function checkAnswer(question, correctAnswer) {
+            let userAnswer = prompt(question);
+            if (Number(userAnswer) === correctAnswer) {
+                alert("Верно!");
+                return 1;
+            } else {
+                alert("Неверно!");
+                return 0;
+            }
+        }
+
+        let correctAnswers = 0;
+
+        correctAnswers += checkAnswer("Загадка 1: Сколько цветов в радуге?", 7);
+        correctAnswers += checkAnswer("Загадка 2: Сколько см в одном метре?", 100);
+
+        alert("Количество отгаданных загадок = " + correctAnswers);
+
+        for (let i = 1; i <= 10; i++) {
+            alert(i);
+        }
+
+        while (prompt("Введите 1 для выхода") !== "1") {
+            alert("Попробуйте еще раз");
+        }
+
+        let surname = prompt("Введите вашу фамилию:");
+        let reversedSurname = surname.split('').reverse().join('');
+        alert(surname.toLowerCase() === reversedSurname.toLowerCase() 
+            ? "Ваша фамилия - палиндром!" 
+            : "Ваша фамилия - не палиндром.");
+
+        function calculateFactorial(n) {
+            let factorial = 1;
+            for (let i = n; i > 0; i--) {
+                factorial *= i;
+            }
+            return factorial;
+        }
+
+        let journalNumber = Number(prompt("Введите свой номер по журналу"));
+        alert("Факториал вашего номера в списке: " + calculateFactorial(journalNumber));
+    </script>
+</body>
+</html>
